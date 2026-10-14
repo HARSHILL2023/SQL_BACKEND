@@ -4,11 +4,9 @@ require("dotenv").config();
 const app = express();
 const studentRoutes = require("./src/routes/route");
 
-// Read JSON request bodies
 app.use(express.json());
 
-// Register student APIs
-app.use("/students", studentRoutes);
+app.use("/", studentRoutes);
 
 app.get("/", (req, res) => {
     res.send("PostgreSQL Node.js Server is running");
